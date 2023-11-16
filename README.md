@@ -45,4 +45,4 @@ $ python main.py
 ```
 ## Casos de prueba
 Mutante = "ATGCGA", "CAGTGC", "TTATGT", "AGTTGG", "CTCTTA", "TCACTG"
-No mutante = "ATGCGA", "CAGTGC", "ATGCTA", "TTATGT", "CCCTCC", "AATCAG"  
+<p>No mutante = "ATGCGA", "CAGTGC", "ATGCTA", "TTATGT", "CCCTCC", "AATCAG"</p>  
