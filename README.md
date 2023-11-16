@@ -31,11 +31,18 @@ $ git clone https://github.com/alefidececchi/mutants.git
 4. Ejecutá:
 ```
 $ python3 main.py
+// o
+$ python main.py
 ```
 ### En windows:
 1. Debes tener instalado Python 3.10, de no ser así podés acá hay una guía paso a paso para poder instalarlo correctamente: https://www.digitalocean.com/community/tutorials/install-python-windows-10
-2. Clona el repositorio en alguna carpeta vacía.
+2. Clona el repositorio en alguna carpeta vacía (usa el comando descrito anteriormente).
 3. Ejecutá:
 ```
 $ python3 main.py
+// o
+$ python main.py
 ```
+## Casos de prueba
+Mutante = "ATGCGA", "CAGTGC", "TTATGT", "AGTTGG", "CTCTTA", "TCACTG"
+No mutante = "ATGCGA", "CAGTGC", "ATGCTA", "TTATGT", "CCCTCC", "AATCAG"  

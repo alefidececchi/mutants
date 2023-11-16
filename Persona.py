@@ -23,6 +23,7 @@ class Persona:
                 contador += 1
                 self.dna.append(lineaDna)
                 print("Secuencia de DNA válida, continúe hasta llenar la matriz de DNA")
+        print("ADN ingresado: ")
         print(self.dna)
         return self.dna
 
@@ -58,7 +59,6 @@ class Persona:
                     if contador >= 4:
                         secuenciasEncontradas += 1
                         break
-        print("Secuencias verticales y horizontales: " + str(secuenciasEncontradas))
         return secuenciasEncontradas
 
     def encontrarSecuenciasDiagonales(self):
@@ -66,7 +66,6 @@ class Persona:
 
         for i in range(0, 3):
             for j in range(0, 3):
-                print(str(i) + " " + str(j))
                 if self.dna[i][j] == self.dna[i + 1][j + 1] and self.dna[i + 1][j + 1] == self.dna[i + 2][j + 2] and self.dna[i + 2][j + 2] == \
                         self.dna[i + 3][j + 3]:
                     secuenciasEncontradas += 1
@@ -74,23 +73,20 @@ class Persona:
 
             # Utilizamos el mismo for para iterar tambien sobre la diagonal inversa
             for k in range(3, 6):
-                print(str(i) + " " + str(k))
                 if self.dna[i][k] == self.dna[i + 1][k - 1] and self.dna[i + 1][k - 1] == self.dna[i + 2][k - 2] and self.dna[i + 2][k - 2] == \
                         self.dna[i + 3][k - 3]:
                     secuenciasEncontradas += 1
                     if secuenciasEncontradas > 1: break
             if secuenciasEncontradas > 1: break
 
-        print("Secuencias diagonales: " + str(secuenciasEncontradas))
         return secuenciasEncontradas
 
     def isMutant(self):
+
         secuencias = self.encontrarSecuenciasVerticalHorizontal()
-        print("secuencias verticales : " + str(secuencias))
         if secuencias > 1:
             self.esMutante = True
         secuencias += self.encontrarSecuenciasDiagonales()
 
-        print("secuencias horizontales : " + str(secuencias))
         self.esMutante = True if secuencias > 1 else False
         return self.esMutante
