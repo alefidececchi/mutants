@@ -1,6 +1,5 @@
 # Mutants
 * Nombre y Apellido: Alejandro Fidececchi
-* Legajo: 
 * DNI: 38372000
 * Email: ale.fidececchi@gmail.com
 ## De que va el proyecto

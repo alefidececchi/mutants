@@ -63,19 +63,34 @@ class Persona:
 
     def encontrarSecuenciasDiagonales(self):
         secuenciasEncontradas = 0
+        diagonales_contadas = set()
+        diagonales_contadas_inversas = set()
 
         for i in range(0, 3):
             for j in range(0, 3):
                 if self.dna[i][j] == self.dna[i + 1][j + 1] and self.dna[i + 1][j + 1] == self.dna[i + 2][j + 2] and self.dna[i + 2][j + 2] == \
                         self.dna[i + 3][j + 3]:
-                    secuenciasEncontradas += 1
+                    inicio_diagonal = (i, j)
+                    if inicio_diagonal not in diagonales_contadas:
+                        diagonales_contadas.add((i, j))
+                        diagonales_contadas.add((i + 1, j + 1))
+                        diagonales_contadas.add((i + 2, j + 2))
+                        diagonales_contadas.add((i + 3, j + 3))
+                        secuenciasEncontradas += 1
                     if secuenciasEncontradas > 1: break
+            if secuenciasEncontradas > 1: break
 
             # Utilizamos el mismo for para iterar tambien sobre la diagonal inversa
             for k in range(3, 6):
                 if self.dna[i][k] == self.dna[i + 1][k - 1] and self.dna[i + 1][k - 1] == self.dna[i + 2][k - 2] and self.dna[i + 2][k - 2] == \
                         self.dna[i + 3][k - 3]:
-                    secuenciasEncontradas += 1
+                    inicio_diagonal = (i, k)
+                    if inicio_diagonal not in diagonales_contadas_inversas:
+                        diagonales_contadas_inversas.add((i, k))
+                        diagonales_contadas_inversas.add((i + 1, k - 1))
+                        diagonales_contadas_inversas.add((i + 2, k - 2))
+                        diagonales_contadas_inversas.add((i + 3, k - 3))
+                        secuenciasEncontradas += 1
                     if secuenciasEncontradas > 1: break
             if secuenciasEncontradas > 1: break
 
