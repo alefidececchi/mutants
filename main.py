@@ -6,7 +6,6 @@ while continuarPrograma:
     persona = Persona()
     dna = persona.cargar_dna()
     print("Buscando secuencias...")
-
     resultado = persona.isMutant()
     print("La invocacion del metodo isMutant() devolvió: " + str(resultado))
 
